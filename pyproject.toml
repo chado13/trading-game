@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "trading-game"
+version = "0.1.0"
+description = "bitcoin trading game"
+authors = ["chado13"]
+readme = "README.md"
+packages = [{include = "trading_game"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+flake8 = "^5.0.4"
+isort = "^5.10.1"
+mypy = "^0.982"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = "alphaground"
+known_third_party = ["pytest"]
+multi_line_output = 3
+atomic = true
+include_trailing_comma = true
+combine_as_imports = true
+force_alphabetical_sort_within_sections = true
+
+[tool.mypy]
+python_version = "3.10"
+pretty = true
+disallow_untyped_calls =  true
+disallow_untyped_defs = true
+disallow_incomplete_defs= true
+disallow_any_generics = true
+warn_incomplete_stub = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+allow_redefinition = true
+strict_optional = false
